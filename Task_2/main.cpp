@@ -4,19 +4,34 @@
 
 using namespace std;
 
+void ShowArray(int array1[])
+{
+    for (int i = 0; i < array1.size ; i++)
+                {
+                    if ((i + 1) < 10)
+                    {
+                        cout << "Element Number " << i + 1 << "   " << array1[i] << endl;
+                    }
+                    else
+                    {
+                        cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
+                    }
+                };
+                break;
+}
+
 int main()
 {
-    int R = 0; /* Переменная размера массива */
-    int counter; /* counter - переменная счетчика цикла for */
-    char MENU; /*Переменная селектора меню*/
-    /* Цикл заполнения одномерного массива  */
+    int R = 0;
+    int counter;
+    char MENU;
     cout << "Vvedi R, gde R - razmer massiva" << endl;
-    cin >> R; /* Ввод R*/
-    int array1[R]; /* Инициализация одномерного массива */
+    cin >> R;
+    int array1[R];
     srand(time(NULL));
     for (counter = 0; counter < R; counter++)
     {
-        array1[counter] = rand() % 201 - 100; /* заполнение массива случайными числами от -100 до +100*/;
+        array1[counter] = rand() % 201 - 100;
     }
     do
     {
@@ -29,25 +44,12 @@ int main()
         cin >> MENU;
         switch (MENU)
         {
-            /* кейс для вывода массива*/
-            case '1':
 
-                for (counter = 0; counter < R; counter++)
-                {
-                    if ((counter + 1) < 10)
-                    {
-                        cout << "Element Number " << counter + 1 << "   " << array1[counter] << endl;
-                    }
-                    else
-                    {
-                        cout << "Element Number " << counter + 1 << "  " << array1[counter] << endl;
-                    }
-                };
+            case '1':
+                ShowArray();
                 break;
-            /*кейс 2 для сортировки*/
             case '2':
                 int temporary;
-
                 for (counter = 0; counter < R - 1; counter++)
                 {
                     for (int second_counter = 0; second_counter < R - counter - 1; second_counter++)

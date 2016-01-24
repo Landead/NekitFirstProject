@@ -17,7 +17,6 @@ void ShowArray(int array1[])
                         cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
                     }
                 };
-                break;
 }
 
 int main()

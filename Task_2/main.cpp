@@ -71,12 +71,11 @@ int main()
         cin >> MENU;
         switch (MENU)
         {
-
             case '1':
-                ShowArray();
+                ShowArray(array1);
                 break;
             case '2':
-                SortArray();
+                SortArray(array1);
                 break;
         }
         system("Pause");

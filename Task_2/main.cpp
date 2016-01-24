@@ -34,7 +34,7 @@ void SortArray(int array1[])
             }
         }
     }
-    for (j = 0; j < sizeof(array1); j++)
+    for (int j = 0; j < sizeof(array1); j++)
     {
         if ((j + 1) < 10)
         {

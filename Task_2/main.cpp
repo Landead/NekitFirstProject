@@ -6,7 +6,7 @@ using namespace std;
 
 void ShowArray(int array1[])
 {
-    for (int i = 0; i < array1.size ; i++)
+    for (int i = 0; i < sizeof(array1) ; i++)
     {
         if ((i + 1) < 10)
         {
@@ -22,9 +22,9 @@ void ShowArray(int array1[])
 void SortArray(int array1[])
 {
     int temp = 0;
-    for (int j = 0; j < array1.size - 1; j++)
+    for (int j = 0; j < sizeof(array1) - 1; j++)
     {
-        for (int k = 0; k < array1.size - j - 1; k++)
+        for (int k = 0; k < sizeof(array1) - j - 1; k++)
         {
             if (array1[k] > array1[k + 1])
             {
@@ -34,7 +34,7 @@ void SortArray(int array1[])
             }
         }
     }
-    for (j = 0; j < array1.size; j++)
+    for (j = 0; j < sizeof(array1); j++)
     {
         if ((j + 1) < 10)
         {

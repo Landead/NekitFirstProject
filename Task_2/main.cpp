@@ -7,16 +7,44 @@ using namespace std;
 void ShowArray(int array1[])
 {
     for (int i = 0; i < array1.size ; i++)
-                {
-                    if ((i + 1) < 10)
-                    {
-                        cout << "Element Number " << i + 1 << "   " << array1[i] << endl;
-                    }
-                    else
-                    {
-                        cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
-                    }
-                };
+    {
+        if ((i + 1) < 10)
+        {
+            cout << "Element Number " << i + 1 << "   " << array1[i] << endl;
+        }
+        else
+        {
+            cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
+        }
+    };
+}
+
+void SortArray(int array1[])
+{
+    int temp = 0;
+    for (int j = 0; j < array1.size - 1; j++)
+    {
+        for (int k = 0; k < array1.size - j - 1; k++)
+        {
+            if (array1[k] > array1[k + 1])
+            {
+            temp = array1[k];
+            array1[k] = array1[k + 1];
+            array1[k + 1] = temp;
+            }
+        }
+    }
+    for (j = 0; j < array1.size; j++)
+    {
+        if ((j + 1) < 10)
+        {
+            cout << "Element Number " << j + 1 << "   " << array1[j] << endl;
+        }
+        else
+        {
+            cout << "Element Number " << j + 1 << "  " << array1[j] << endl;
+        }
+    };
 }
 
 int main()
@@ -48,30 +76,7 @@ int main()
                 ShowArray();
                 break;
             case '2':
-                int temporary;
-                for (counter = 0; counter < R - 1; counter++)
-                {
-                    for (int second_counter = 0; second_counter < R - counter - 1; second_counter++)
-                    {
-                        if (array1[second_counter] > array1[second_counter + 1])
-                        {
-                            temporary = array1[second_counter];
-                            array1[second_counter] = array1[second_counter + 1];
-                            array1[second_counter + 1] = temporary;
-                        }
-                    }
-                }
-                for (counter = 0; counter < R; counter++)
-                {
-                    if ((counter + 1) < 10)
-                    {
-                        cout << "Element Number " << counter + 1 << "   " << array1[counter] << endl;
-                    }
-                    else
-                    {
-                        cout << "Element Number " << counter + 1 << "  " << array1[counter] << endl;
-                    }
-                };
+                SortArray();
                 break;
         }
         system("Pause");

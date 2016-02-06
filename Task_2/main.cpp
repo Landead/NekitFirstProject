@@ -4,10 +4,13 @@
 
 using namespace std;
 
-void ShowArray(int array1[])
+void ShowArray(int numbers[], int numbersCount)
 {
-    for (int i = 0; i < sizeof(array1) ; i++)
+    for (int i = 0; i < numbersCount; i++)
     {
+    cout << "Элемент номер " << i + 1 << " = " << numbers[i] << endl;
+
+    /* Не совсем понимаю зачем это часть кода, её нужно убать
         if ((i + 1) < 10)
         {
             cout << "Element Number " << i + 1 << "   " << array1[i] << endl;
@@ -16,24 +19,26 @@ void ShowArray(int array1[])
         {
             cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
         }
+    */
     };
 }
 
-void SortArray(int array1[])
+void SortArray(int numbers[], int numbersCount)
 {
-    int temp = 0;
-    for (int j = 0; j < sizeof(array1) - 1; j++)
+    int temp = 0; // Внеси инициализацию переменной в условие
+    for (int j = 0; j < numbersCount - 1; j++)
     {
-        for (int k = 0; k < sizeof(array1) - j - 1; k++)
+        for (int k = 0; k < numbersCount - j - 1; k++)
         {
-            if (array1[k] > array1[k + 1])
+            if (numbers[k] > numbers[k + 1])
             {
-            temp = array1[k];
-            array1[k] = array1[k + 1];
-            array1[k + 1] = temp;
+            temp = numbers[k];
+            numbers[k] = numbers[k + 1];
+            numbers[k + 1] = temp;
             }
         }
     }
+    /* Это тут не нужно убери
     for (int j = 0; j < sizeof(array1); j++)
     {
         if ((j + 1) < 10)
@@ -45,37 +50,43 @@ void SortArray(int array1[])
             cout << "Element Number " << j + 1 << "  " << array1[j] << endl;
         }
     };
+    */
 }
 
 int main()
 {
-    int R = 0;
-    int counter;
+    setlocale(LC_CTYPE, "rus");/**< Позволяет выводить кирилицу */
+
+    int numbersCount = 0; /**< Нужно использовать говорящие названия */
+    //int counter; - больше не нужна убери
     char MENU;
-    cout << "Vvedi R, gde R - razmer massiva" << endl;
-    cin >> R;
-    int array1[R];
+    cout << "Введите размер массива" << endl;
+    cin >> numbersCount;
+    int numbers[numbersCount];
     srand(time(NULL));
-    for (counter = 0; counter < R; counter++)
+
+    for (int i = 0; i < numbersCount; i++)
     {
-        array1[counter] = rand() % 201 - 100;
+        numbers[i] = rand() % 201 - 100;
     }
+
     do
     {
         system("cls");
 
-        cout << "Menus" << endl;
-        cout << "Dlya vivoda massiva nazhmite 1" << endl;
-        cout << "Dlya Sortirovki elementov massiva nazhmite 2" << endl;
-        cout << "Dlya vihoda nazhmite 3" << endl;
+        cout << "Меню:" << endl;
+        cout << "1: Вывести массив" << endl;
+        cout << "2: Сортировать массив" << endl;
+        cout << "3: Выйти" << endl;
         cin >> MENU;
+
         switch (MENU)
         {
             case '1':
-                ShowArray(array1);
+                ShowArray(numbers, numbersCount);
                 break;
             case '2':
-                SortArray(array1);
+                SortArray(numbers, numbersCount);
                 break;
         }
         system("Pause");

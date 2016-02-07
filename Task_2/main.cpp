@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <locale>
+#include <windows.h>
 
 using namespace std;
 
@@ -55,8 +57,9 @@ void SortArray(int numbers[], int numbersCount)
 
 int main()
 {
-    setlocale(LC_CTYPE, "rus");/**< ѕозвол€ет выводить кирилицу */
-
+   // setlocale( LC_ALL,"Russian" );/**< ѕозвол€ет выводить кирилицу */
+    SetConsoleCP(1251);// установка кодовой страницы win-cp 1251 в поток ввода
+    SetConsoleOutputCP(1251);
     int numbersCount = 0; /**< Ќужно использовать говор€щие названи€ */
     //int counter; - больше не нужна убери
     char MENU;

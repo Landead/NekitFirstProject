@@ -12,7 +12,8 @@ void ShowArray(int numbers[], int numbersCount)
     {
     cout << "Ёлемент номер " << i + 1 << " = " << numbers[i] << endl;
 
-    /* Ќе совсем понимаю зачем это часть кода, еЄ нужно убать
+    /* часть кода отвечающа€ за красивую сортировку */
+
         if ((i + 1) < 10)
         {
             cout << "Element Number " << i + 1 << "   " << array1[i] << endl;
@@ -21,7 +22,6 @@ void ShowArray(int numbers[], int numbersCount)
         {
             cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
         }
-    */
     };
 }
 
@@ -40,26 +40,14 @@ void SortArray(int numbers[], int numbersCount)
             }
         }
     }
-    /* Ёто тут не нужно убери
-    for (int j = 0; j < sizeof(array1); j++)
-    {
-        if ((j + 1) < 10)
-        {
-            cout << "Element Number " << j + 1 << "   " << array1[j] << endl;
-        }
-        else
-        {
-            cout << "Element Number " << j + 1 << "  " << array1[j] << endl;
-        }
-    };
-    */
+
 }
 
 int main()
 {
-   // setlocale( LC_ALL,"Russian" );/**< ѕозвол€ет выводить кирилицу */
-    SetConsoleCP(1251);// установка кодовой страницы win-cp 1251 в поток ввода
-    SetConsoleOutputCP(1251);
+    setlocale( LC_ALL,"Russian" );/**< ѕозвол€ет выводить кирилицу */
+   // SetConsoleCP(1251);// установка кодовой страницы win-cp 1251 в поток ввода
+   // SetConsoleOutputCP(1251);
     int numbersCount = 0; /**< Ќужно использовать говор€щие названи€ */
     //int counter; - больше не нужна убери
     char MENU;

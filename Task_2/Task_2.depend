@@ -14,3 +14,10 @@
 	<cstdlib>
 	<ctime>
 
+1454926678 source:c:\users\zhuravlev\documents\github\nekitfirstproject\task_2\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<locale>
+	<windows.h>
+

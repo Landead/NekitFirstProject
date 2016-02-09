@@ -6,21 +6,28 @@
 
 using namespace std;
 
+void InputArray(int numbers[], int numbersCount)
+{
+
+
+    for (int i = 0; i < numbersCount; i++)
+    {
+        numbers[i] = rand() % 201 - 100;
+    }
+
+}
+
 void ShowArray(int numbers[], int numbersCount)
 {
     for (int i = 0; i < numbersCount; i++)
     {
-    cout << "Ёлемент номер " << i + 1 << " = " << numbers[i] << endl;
-
-    /* часть кода отвечающа€ за красивую сортировку */
-
         if ((i + 1) < 10)
         {
-            cout << "Element Number " << i + 1 << "   " << array1[i] << endl;
+            cout << "Ёлемент номер  " << i + 1 << " : " << numbers[i] << endl;
         }
         else
         {
-            cout << "Element Number " << i + 1 << "  " << array1[i] << endl;
+            cout << "Ёлемент номер " << i + 1 << " : " << numbers[i] << endl;
         }
     };
 }
@@ -56,10 +63,7 @@ int main()
     int numbers[numbersCount];
     srand(time(NULL));
 
-    for (int i = 0; i < numbersCount; i++)
-    {
-        numbers[i] = rand() % 201 - 100;
-    }
+    InputArray(numbers, numbersCount);
 
     do
     {

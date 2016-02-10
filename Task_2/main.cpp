@@ -6,15 +6,12 @@
 
 using namespace std;
 
-void InputArray(int numbers[], int numbersCount)
+void FillArray(int numbers[], int numbersCount)
 {
-
-
     for (int i = 0; i < numbersCount; i++)
     {
         numbers[i] = rand() % 201 - 100;
     }
-
 }
 
 void ShowArray(int numbers[], int numbersCount)
@@ -34,8 +31,7 @@ void ShowArray(int numbers[], int numbersCount)
 
 void SortArray(int numbers[], int numbersCount)
 {
-    int temp = 0; // Внеси инициализацию переменной в условие
-    for (int j = 0; j < numbersCount - 1; j++)
+    for (int j = 0,temp = 0; j < numbersCount - 1; j++)
     {
         for (int k = 0; k < numbersCount - j - 1; k++)
         {
@@ -53,28 +49,23 @@ void SortArray(int numbers[], int numbersCount)
 int main()
 {
     setlocale( LC_ALL,"Russian" );/**< Позволяет выводить кирилицу */
-   // SetConsoleCP(1251);// установка кодовой страницы win-cp 1251 в поток ввода
+   // SetConsoleCP(1251); //установка кодовой страницы win-cp 1251 в поток ввода
    // SetConsoleOutputCP(1251);
-    int numbersCount = 0; /**< Нужно использовать говорящие названия */
-    //int counter; - больше не нужна убери
+    int numbersCount = 0;
     char MENU;
     cout << "Введите размер массива" << endl;
     cin >> numbersCount;
     int numbers[numbersCount];
     srand(time(NULL));
-
-    InputArray(numbers, numbersCount);
-
+    FillArray(numbers, numbersCount);
     do
     {
         system("cls");
-
         cout << "Меню:" << endl;
         cout << "1: Вывести массив" << endl;
         cout << "2: Сортировать массив" << endl;
         cout << "3: Выйти" << endl;
         cin >> MENU;
-
         switch (MENU)
         {
             case '1':

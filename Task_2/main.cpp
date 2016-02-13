@@ -31,26 +31,25 @@ void ShowArray(int numbers[], int numbersCount)
 
 void SortArray(int numbers[], int numbersCount)
 {
-    for (int j = 0,temp = 0; j < numbersCount - 1; j++)
+    for (int j = 0; j < numbersCount - 1; j++)
     {
         for (int k = 0; k < numbersCount - j - 1; k++)
         {
             if (numbers[k] > numbers[k + 1])
             {
-            temp = numbers[k];
-            numbers[k] = numbers[k + 1];
-            numbers[k + 1] = temp;
+                int temp = numbers[k];
+                numbers[k] = numbers[k + 1];
+                numbers[k + 1] = temp;
             }
         }
     }
-
 }
 
 int main()
 {
     setlocale( LC_ALL,"Russian" );/**< Позволяет выводить кирилицу */
-   // SetConsoleCP(1251); //установка кодовой страницы win-cp 1251 в поток ввода
-   // SetConsoleOutputCP(1251);
+    // SetConsoleCP(1251); //установка кодовой страницы win-cp 1251 в поток ввода
+    // SetConsoleOutputCP(1251);
     int numbersCount = 0;
     char MENU;
     cout << "Введите размер массива" << endl;
@@ -68,12 +67,12 @@ int main()
         cin >> MENU;
         switch (MENU)
         {
-            case '1':
-                ShowArray(numbers, numbersCount);
-                break;
-            case '2':
-                SortArray(numbers, numbersCount);
-                break;
+        case '1':
+            ShowArray(numbers, numbersCount);
+            break;
+        case '2':
+            SortArray(numbers, numbersCount);
+            break;
         }
         system("Pause");
     }
